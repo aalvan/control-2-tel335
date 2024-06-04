@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```
 npm install react-bootstrap bootstrap
 npm install axios
+npm install react-redux
 ```
 ## Available Scripts
 
