@@ -2,14 +2,19 @@ import Form from 'react-bootstrap/Form';
 import {Button, Col, FormLabel, Row} from "react-bootstrap";
 import {Fragment, useEffect, useState} from "react";
 import axios from "axios";
-import {createStore} from 'Redux'
+//import { createStore } from 'redux'
+import factsReducer from "../reducer/reducer";
 
-const store = createStore()
+// const store = createStore(factsReducer)
 function InputAPI() {
     const [loaded, setDataLoaded] = useState(false)
     const [queryData, setQueryData] = useState({})
     const [queryText, setQuery] = useState('')
 
+    //const addFact = (fact) => {
+    //    store.dispatch({type: 'ADD', fact})
+
+    //}
     const  fetchData = async () => {
         try{
 
@@ -27,6 +32,9 @@ function InputAPI() {
         }
 
     }
+    //store.subscribe(() => {
+    //    console.log(store.getState())
+    // })
     return (
         <Form>
             <Row>
@@ -68,7 +76,9 @@ function InputAPI() {
                                                 </Form.Group>
                                             </Col>
                                             <Col>
-                                                <Button variant={"primary"} size={"sm"}>Like</Button>
+                                                <Button variant={"primary"} size={"sm"} onClick={() => {
+                                                    // addFact(fact.value)
+                                                }}>Like</Button>
                                             </Col>
                                         </Row>
                                         <Row>
